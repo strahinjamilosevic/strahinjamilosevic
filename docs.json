@@ -101,7 +101,7 @@
     "primary": {
       "type": "button",
       "label": "My resume",
-      "href": "/strahinja_milosevic_cv.pdf"
+      "href": "https://all-maker.com/strahinja_milosevic_cv.pdf"
     }
   },
   "contextual": {
