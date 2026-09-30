@@ -1,0 +1,36 @@
+---
+title: "Adyen Terminal API reference"
+sidebarTitle: "Terminal API reference"
+description: "OpenAPI for a non-REST payment protocol."
+---
+
+import Footer from "/snippets/footer.mdx";
+
+| | |
+| --- | --- |
+| Company | Adyen |
+| Role | Technical Writer, in-person payments |
+| Period | November 2021 – November 2024 |
+| Result | A legacy, non-REST API published in the standard API Explorer without changing its protocol |
+| Stack | OpenAPI, Python, nexo retailer protocol, API Explorer |
+| Live site | [Terminal API in the API Explorer](https://docs.adyen.com/api-explorer/terminal-api/1/overview) |
+
+## Why
+
+The Terminal API is foundational to in-person payments. Its legacy structure made it hard to understand, maintain, and integrate with modern developer tooling. Making it accessible mattered for long-term platform scalability and developer trust.
+
+## What
+
+The Terminal API is a non-REST API based on the [nexo retailer protocol](https://www.nexo-standards.org/standards/nexo-retailer-protocol). For years, its only reference lived on a single page assembled from many HTML files. It was hard to navigate and incompatible with the OpenAPI-based API Explorer.
+
+## How
+
+I mapped the full API structure by reconciling the official nexo PDF specification, the existing documentation, and the OpenAPI requirements of the API Explorer tooling. I coordinated between the team that owned the Terminal API implementation and the platform team responsible for API reference pipelines.
+
+We created a Python script that generates OpenAPI specs the tooling could consume. We introduced a new API Explorer page type that presents the API structure by request type.
+
+## Result
+
+The migration brought a critical legacy API into the standard developer experience without changing its underlying protocol. It reduced long-term maintenance risk and improved discoverability for a globally used payments API.
+
+<Footer />

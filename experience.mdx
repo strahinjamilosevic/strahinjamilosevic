@@ -1,0 +1,91 @@
+---
+title: "Experience"
+description: "Roles at Bitvavo, Adyen, ProGlove, eFront (part of BlackRock), and NCR."
+---
+
+import Footer from "/snippets/footer.mdx";
+
+I have over a decade of experience in technical roles, with the last eight specializing in technical writing and documentation engineering across fintech, payments, crypto, and industrial hardware. For the full stories behind these roles, see [Projects](/projects).
+
+## Senior Technical Writer, Bitvavo
+
+November 2024 – Present | Amsterdam, Netherlands (hybrid) | [docs.bitvavo.com](https://docs.bitvavo.com)
+
+Sole technical writer for Bitvavo's Exchange domain: API documentation, developer portal, and docs-as-code platform for REST, WebSocket, and FIX APIs.
+
+- Replaced the Redocly site with a Docusaurus developer portal within 4 months of joining, as sole technical writer and docs engineer for the Exchange domain (5 teams, 50+ developers). Reached 73,000+ new users in the first year and a peak of 10,000 monthly active users.
+- Documented the full exchange API portfolio: 8 APIs spanning trading, market data, RFQ, and institutional subaccount and leveraged-account management. Standardized them as OpenAPI (REST), AsyncAPI (WebSocket), and XML (FIX).
+- Restructured 12,000+ lines of API definitions into a modular single-source repository. This enabled schema-generated examples and AI-assisted workflows, and removed the tech debt blocking framework upgrades.
+- Set up the Kubernetes deployment and CI/CD pipeline for the docs platform, working with platform and DevEx teams, and took over pipeline ownership to enable same-day releases.
+- Redesigned the information architecture: use-case navigation, Algolia search indexing parameter-level content, reusable shared topics, and date-based release notes with RSS and breaking-change previews.
+- Secured Bitvavo's verified Postman publisher status and launched a public REST and WebSocket workspace with an authentication environment and signature-generation scripts.
+- Launched an API governance initiative with staff engineers covering naming, authentication, rate limits, error handling, and backward-compatible change management.
+- Automated per-API spec downloads, PR preview environments and UAT staging for unreleased APIs, all generated from the same source as the published docs.
+- Launched an in-docs feedback widget and GA4 analytics, and turned user-reported issues into FAQs and actionable error-handling guidance.
+- Rebuilt the docs homepage with custom Docusaurus components (clickable tiles, a mini table of contents, skip-to-content) and split the top navigation into Docs and API sections, with APIs grouped by Trading, Market Data, and Institutional.
+- Set up ticket templates, contribution workflows, and review processes across API teams.
+- Documented WebSocket channels in adapted OpenAPI in 2025, while AsyncAPI was not yet mature enough. Migrated them to AsyncAPI once it could describe all authentication, errors, and request, response, and event structures, which simplified the tooling, and built a cleaner component for the docusaurus-openapi-docs plugin.
+
+Case studies: [API docs platform](/projects/bitvavo-api-docs-platform) and [docs strategy](/projects/bitvavo-docs-strategy).
+
+## Technical Writer, Adyen
+
+November 2021 – November 2024 | Amsterdam, Netherlands | [docs.adyen.com/point-of-sale](https://docs.adyen.com/point-of-sale/)
+
+Technical writer for Adyen's in-person payments: API references, integration guides, and terminal documentation for a global payments platform.
+
+- Rebuilt the in-person payments information architecture after interviewing internal stakeholders and clients and validating the findings in Google Analytics. Cut navigation from 67 items under 10 labels to 47 under 7, increasing section traffic by about 25% and reducing negative feedback within a year.
+- Documented the full in-person payments portfolio with product and engineering: cloud and local point-of-sale integration, payment processing, terminal features, and payment terminal manuals.
+- Authored and maintained REST API references for in-person payments in source code and migrated them from static docs to Adyen's API Explorer.
+- Led the OpenAPI migration of the Terminal API, a non-REST API based on the nexo retailer protocol. Mapped the specification, coordinated the implementation and API platform teams, and co-developed a Python generation script and a new API Explorer page type.
+- Documented the internal Logistics API from Stoplight mockups while it was in development, enabling partners to migrate off a legacy messaging system before the deadline. Simplified the request and response schemas along the way.
+- Shaped API design as a member of the API review group, improving naming and endpoint consistency across products.
+- Mentored technical writers and interviewed dozens of candidates, contributing to the hiring framework.
+- Structured the NFC integration docs around user intent, so developers could find the right combination of card type, terminal type, and request type (identify, read, write, session) across two terminal operating systems.
+
+Case studies: [Terminal API reference](/projects/adyen-terminal-api-reference), [in-person payments overhaul](/projects/adyen-in-person-payments-overhaul), [NFC integration docs](/projects/adyen-nfc-integration-docs), and [Logistics API reference](/projects/adyen-logistics-api-reference).
+
+## Technical Writer, ProGlove
+
+July 2020 – October 2021 | Munich, Germany | [docs.proglove.com](https://docs.proglove.com/?lang=en)
+
+First technical writer at ProGlove, a maker of industrial wearable barcode scanners. Built the documentation function, developer portal, and product UX copy from scratch.
+
+- Built ProGlove's documentation portal from zero as the first and sole technical writer. Within a year it went from a minimal MkDocs site to a multi-product portal with versioning, release notes, media, and automatically updated API references.
+- Introduced the Paligo CCMS, migrated all existing content using Pandoc and custom scripts, and designed the information architecture across hardware, software, and APIs.
+- Designed the portal's visual layer: custom Paligo components and HTML/CSS aligned with the brand, plus all diagrams, screenshots, and short tutorial videos.
+- Wrote UX copy for the web portal where customers configured scanner workflows, for the scanner displays, and for the iOS and Android apps.
+- Authored OpenAPI references for the public APIs and maintained the developer portal as docs-as-code (Markdown, Git, Travis CI, Amazon S3).
+- Set up contribution and review workflows across documentation, product, development, and QA, removing review bottlenecks and speeding up publication.
+- Prioritized documentation improvements as quarterly OKRs, based on support and operations pain points.
+
+Case study: [ProGlove docs platform](/projects/proglove-docs-platform).
+
+## Technical Writer, eFront (part of BlackRock)
+
+March 2019 – June 2020 | Belgrade, Serbia
+
+Junior Documentation Engineer from March 2019 to February 2020, then Technical Writer from February 2020 to June 2020.
+
+- Authored a 150-page product manual for eFront Insight, an investor analytics platform for fund managers.
+- Documented APIs in source code using OpenAPI (Swagger), Visual Studio, and Git.
+- Designed documentation taxonomies across multiple products, applying topic-based authoring, content reuse, and single sourcing.
+- Wrote developer setup documentation for an in-house .NET application.
+
+## ATM Incident Management Agent, NCR
+
+March 2015 – March 2019 | Belgrade, Serbia
+
+- Monitored and resolved ATM incidents for Barclays and National Australia Bank through remote resolution and ticketing systems (Oracle).
+- Coordinated live incident resolution between customer engineers, logistics teams, clients, and third-party vendors, translating technical faults into clear instructions for on-site personnel.
+- Enforced security protocols during engineering calls, including vault access procedures for field engineers.
+- Managed ATM replenishment schedules across the client estate.
+
+## Earlier roles
+
+- Freelance Translator (English–Serbian), 2010 – Present. Legal and technical translation, including heavy machinery for road works, mining, and construction.
+- Supervisor, Kreativa Unlimited, December 2012 – April 2014.
+- Translator, Alba Translations, January 2012 – June 2013.
+- Office Assistant (intern), Credit Agricole Srbija, November 2011 – December 2011.
+
+<Footer />

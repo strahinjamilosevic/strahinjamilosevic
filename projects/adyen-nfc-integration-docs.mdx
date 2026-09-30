@@ -1,0 +1,34 @@
+---
+title: "Adyen NFC integration docs"
+sidebarTitle: "NFC integration docs"
+description: "Integration docs structured around user intent."
+---
+
+import Footer from "/snippets/footer.mdx";
+
+| | |
+| --- | --- |
+| Company | Adyen |
+| Role | Technical Writer, in-person payments |
+| Period | November 2021 – November 2024 |
+| Result | Lower cognitive load in an integration flow with a high potential for implementation errors |
+| Stack | CMS components, information architecture |
+| Live site | [docs.adyen.com/point-of-sale/nfc-tags](https://docs.adyen.com/point-of-sale/nfc-tags/) |
+
+## Why
+
+NFC integrations fail easily because of subtle differences between card types, terminal hardware, and operating systems. Clear guidance reduces integration errors and support load.
+
+## What
+
+Developers build four request types: identify, read, write, and session. Each has card-specific data structures. Adyen terminals run two operating systems that do not always have feature parity.
+
+## How
+
+I structured the documentation around user intent instead of API shape. Using existing CMS components, I organized the page so developers could quickly find the right combination of card type, terminal type, and request type.
+
+## Result
+
+The documentation reduced cognitive load in a complex integration flow with a high potential for implementation errors.
+
+<Footer />

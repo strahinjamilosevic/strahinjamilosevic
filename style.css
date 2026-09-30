@@ -1,0 +1,27 @@
+/* Top navigation: show LinkedIn and GitHub as icons only. The label stays for screen readers. */
+#navbar .navbar-link a[href*="linkedin.com"] span,
+#navbar .navbar-link a[href*="github.com"] span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Footer: tighten the space around the separator line under the copyright line. */
+[data-assistant-bar].invisible {
+  display: none;
+}
+
+#footer {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+/* Single-page sections: hide the one-item left navigation but keep the "On this page" list. */
+#sidebar:has(li[id="/skills"]),
+#sidebar:has(li[id="/experience"]),
+#sidebar:has(li[id="/education"]) {
+  visibility: hidden;
+}

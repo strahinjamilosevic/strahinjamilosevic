@@ -1,53 +1,107 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Strahinja Milošević",
+  "description": "Portfolio of Strahinja Milošević, senior technical writer and documentation engineer: skills, experience, education, and documentation case studies.",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "navigation": {
-    "pages": [
+    "tabs": [
       {
-        "group": "Getting Started",
+        "tab": "Home",
         "pages": [
-          "index",
-          "quickstart"
+          "index"
+        ]
+      },
+      {
+        "tab": "Skills",
+        "pages": [
+          "skills"
+        ]
+      },
+      {
+        "tab": "Experience",
+        "pages": [
+          "experience"
+        ]
+      },
+      {
+        "tab": "Education",
+        "pages": [
+          "education"
+        ]
+      },
+      {
+        "tab": "Projects",
+        "groups": [
+          {
+            "group": "Projects",
+            "pages": [
+              "projects/index"
+            ]
+          },
+          {
+            "group": "Bitvavo",
+            "pages": [
+              "projects/bitvavo-api-docs-platform",
+              "projects/bitvavo-docs-strategy"
+            ]
+          },
+          {
+            "group": "Adyen",
+            "pages": [
+              "projects/adyen-terminal-api-reference",
+              "projects/adyen-in-person-payments-overhaul",
+              "projects/adyen-nfc-integration-docs",
+              "projects/adyen-logistics-api-reference"
+            ]
+          },
+          {
+            "group": "ProGlove",
+            "pages": [
+              "projects/proglove-docs-platform"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Contact",
+        "pages": [
+          "contact"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png",
+    "href": "/"
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Blog",
+        "href": "https://all-maker.com/"
+      },
+      {
+        "label": "LinkedIn",
+        "icon": "linkedin",
+        "href": "https://www.linkedin.com/in/strahinjamilosevic/"
+      },
+      {
+        "label": "GitHub",
+        "icon": "github",
+        "href": "https://github.com/strahinjamilosevic"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "My resume",
+      "href": "/strahinja_milosevic_cv.pdf"
     }
   },
   "contextual": {
@@ -61,12 +115,5 @@
       "cursor",
       "vscode"
     ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
   }
 }

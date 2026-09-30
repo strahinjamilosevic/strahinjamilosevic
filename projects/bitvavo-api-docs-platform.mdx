@@ -1,0 +1,46 @@
+---
+title: "Bitvavo API docs platform"
+sidebarTitle: "API docs platform"
+description: "A developer portal for 8 REST, WebSocket, and FIX APIs, with 73,000+ new users in the first year."
+---
+
+import Footer from "/snippets/footer.mdx";
+
+| | |
+| --- | --- |
+| Company | Bitvavo |
+| Role | Senior Technical Writer, sole writer and docs engineer for the Exchange domain |
+| Period | November 2024 – Present |
+| Result | 8 APIs documented, 73,000+ new users in the first year, 10,000 monthly active users at peak |
+| Stack | Docusaurus, docusaurus-openapi-docs, OpenAPI, AsyncAPI, FIX, Kubernetes, Cloudflare, Algolia, PushFeedback, Postman, GA4 |
+| Live site | [docs.bitvavo.com](https://docs.bitvavo.com/) |
+
+## Why
+
+The existing documentation was a Redocly site with basic API reference information. REST and WebSocket content shared a single-scroll page, and code samples and authentication guidance needed work. A crypto exchange competes on developer trust, so the documentation had to improve.
+
+## What
+
+There was no established docs tooling or publishing pipeline to build on. The platform needed to support REST, WebSocket, and later FIX, each with distinct structural and UX requirements. It also had to fit into company infrastructure built on Kubernetes and Cloudflare.
+
+## How
+
+I evaluated multiple static site generators and API documentation tools, then selected Docusaurus with the docusaurus-openapi-docs plugin. I rewrote the full API reference and split REST and WebSocket into separate, purpose-built sections.
+
+WebSocket was the hardest part. AsyncAPI was not mature enough in 2025, so I adapted the OpenAPI YAML structure to represent WebSocket channels. I customized Docusaurus components to render them correctly for that protocol, including hiding the REST API testing panel.
+
+Once AsyncAPI could describe all the authentication, errors, and request, response, and event structures, I migrated the WebSocket docs to AsyncAPI. This simplified the tooling, and I built a cleaner component for the docusaurus-openapi-docs plugin.
+
+I restructured 12,000+ lines of API definitions into a modular single-source repository. This enabled schema-generated examples and AI-assisted workflows.
+
+I set up the Kubernetes deployment and CI/CD pipeline with the platform and DevEx teams, then took over pipeline ownership to enable same-day releases. The pipeline includes PR preview environments and UAT staging for unreleased APIs, all generated from the same source as the published docs.
+
+I implemented Algolia search that indexes parameter-level content. I added an in-docs feedback widget and GA4 analytics, and turned user-reported issues into FAQs and error-handling guidance.
+
+I secured Bitvavo's verified Postman publisher status and launched a public REST and WebSocket workspace with an authentication environment and signature-generation scripts.
+
+## Result
+
+The platform covers 8 REST, WebSocket, and FIX APIs across trading, market data, and institutional domains. It reached 73,000+ new users in the first year and a peak of 10,000 monthly active users.
+
+<Footer />
