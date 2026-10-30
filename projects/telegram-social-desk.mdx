@@ -1,0 +1,134 @@
+---
+title: "Telegram social desk"
+sidebarTitle: "Telegram social desk"
+description: "Two self-hosted n8n workflows that post to LinkedIn, Bluesky, and Mastodon and bring replies into one Telegram group, for about €7 a month."
+context:
+  content_type: case_study
+  domain: [ai_tooling]
+  employer: none
+  status: published
+  last_reviewed: 2026-10-30
+  skills: [agentic_automation, ai_augmented_workflows, technical_writing]
+  tools: [n8n, docker, claude_code, github]
+---
+
+import Footer from "/snippets/footer.mdx";
+
+| | |
+| --- | --- |
+| Project | Personal project |
+| Role | Sole builder |
+| Period | October 2026 |
+| Result | 2 workflows and 48 nodes, built and published in one day. About €7 a month. First real post published to all 3 platforms. |
+| Stack | n8n, Telegram Bot API, Bluesky API, Mastodon API, LinkedIn API, Docker Compose, Caddy, Hetzner Cloud, Claude Code |
+| Template | [n8n-telegram-social](https://github.com/strahinjamilosevic/n8n-telegram-social) |
+
+## Why
+
+I wanted to be able to write a short post on my phone and publish it to multiple social networks. I chose LinkedIn, Bluesky, and Mastodon to start but the flow can be expanded. If I did it by hand, I'd have to copy-paste into multiple apps on my phone.
+
+Keeping track of replies has the same problem. Each platform has its own notifications, so a conversation would be easy to miss.
+
+I also wanted hands-on practice with n8n, Docker, and platform APIs. A tool I would use myself was a better way to learn than a tutorial.
+
+## What
+
+I set three requirements:
+
+- One message posts to all three platforms, after a preview.
+- Replies and mentions arrive in one place, separated by platform.
+- A reply typed there lands under the right post on the right platform.
+
+I dropped media upload early since I want my posts to link to my blog. And of course, I can author a longer opinion piece just for LinkedIn with screenshots or other media.
+
+## How
+
+### Tool choices
+
+I already ran n8n on a Hetzner server for another project where I automated searching for worldwide technical writing job postings. Adding workflows there cost nothing extra.
+
+I chose Telegram because it is already on my phone. Its bots are free, and they support buttons and group topics. One group with Compose, Bluesky, and Mastodon topics keeps each audience apart.
+
+I checked each platform's API before committing to it:
+
+| Platform | Decision | Reason |
+|---|---|---|
+| Bluesky | Post and reply | Free API with an app password |
+| Mastodon | Post and reply | Free API with scoped tokens |
+| LinkedIn | Post only | Reading comments needs `r_member_social`, which LinkedIn does not grant to new apps |
+| X | Skipped | Paid per use, and sources report that posts with links cost much more |
+| Hacker News | Skipped | No write API |
+| Reddit | Skipped | New API access needs approval |
+
+### What I built
+
+- `quick-post` has 34 nodes. It receives every message and button tap, shows a preview, and posts or replies.
+- `engagement` has 14 nodes. Every 10 minutes it forwards new Bluesky and Mastodon notifications to their topics, with a Like button.
+
+Telegram allows one webhook per bot, so all inbound traffic goes through one trigger in `quick-post`.
+
+I built it without a database. Each preview holds its own text, and each notification holds a link to its target post. A reply reads that link to find where it belongs.
+
+Each button works once, and only my Telegram user ID is accepted. One platform failing does not stop the others on a new post.
+
+I built the workflows with Claude Code and tested them against the live bot. Testing found two setup problems. Bluesky refused the main account password and needed an app password. The trigger's user filter silently dropped button taps, so I moved that check into the code.
+
+## Result
+
+Both workflows are published and running. The help command, topic IDs, Cancel, the second-tap refusal, and a notification run all work.
+
+The first real post went from Telegram to LinkedIn, Bluesky, and Mastodon in one message.
+
+On the first morning, a mastodon.social 503 error triggered an alert. Nothing was lost, because the workflow only moves its position after a good fetch.
+
+### Benefits and drawbacks
+
+Benefits:
+
+- I post and reply from one app on my phone.
+- I own the workflows and the tokens.
+- It adds no cost to a server I already run.
+- New platforms are small additions to the same workflows.
+
+Drawbacks:
+
+- I maintain it, including server updates and backups.
+- LinkedIn comments stay in the LinkedIn app.
+- LinkedIn tokens expire after 60 days and need a manual reconnect.
+- Setup takes an afternoon and several developer accounts.
+
+### Costs
+
+Prices are from October 2026, excluding VAT, at Hetzner list price.
+
+| Item | Per month |
+|---|---|
+| Hetzner CX23 | €5.99 |
+| Hetzner backups | €1.20 |
+| n8n Community Edition | €0 |
+| Platform APIs and Telegram | €0 |
+| Total | €7.19 |
+
+### Compared to ready-made tools
+
+If you only want the result, a ready-made tool is the better choice. I checked Buffer on its own pricing page. The other figures come from third-party sources that disagree, so check them before relying on them.
+
+| Tool | Price per month | LinkedIn, Bluesky, Mastodon | Replies |
+|---|---|---|---|
+| This template | About €7, or €0 on an existing server | Yes | Bluesky and Mastodon, in Telegram |
+| Buffer Free | $0, 3 channels | Yes | Community inbox, including LinkedIn |
+| Buffer Essentials | $5 per channel | Yes | Community inbox, including LinkedIn |
+| Typefully | About $10, sources vary | Yes, per third-party sources | None found |
+| Publer | About $5–12, sources vary | Yes, per third-party sources | Not confirmed |
+| Hootsuite | From about $99 | Bluesky support unclear | Inbox on higher plans |
+
+Buffer's free plan beats this project on price and on LinkedIn replies. This project wins on control, on Telegram as the single interface, and on what I learned building it.
+
+There are other tools that offer a similar kind of automation as Buffer, each with their own benefits and drawbacks. For example, Publer, Metricool, Later, etc.
+### Build it yourself
+
+The [n8n-telegram-social](https://github.com/strahinjamilosevic/n8n-telegram-social) repository is a public template. Its README has the accounts checklist, every setup step from an empty server to a first post, tests, and troubleshooting.
+
+Last updated: October 30, 2026
+
+<Footer />

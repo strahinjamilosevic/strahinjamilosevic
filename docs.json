@@ -45,6 +45,12 @@
             ]
           },
           {
+            "group": "Personal",
+            "pages": [
+              "projects/telegram-social-desk"
+            ]
+          },
+          {
             "group": "Bitvavo",
             "pages": [
               "projects/bitvavo-api-docs-platform",
